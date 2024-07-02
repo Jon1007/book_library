@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Books List</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <main>
+      <h2>Books Library</h2>
+      <form action="/books" method="POST" enctype="multipart/form-data">
+        <input type="text" name="title" placeholder="Title" required />
+        <input type="text" name="author" placeholder="Author" required />
+        <input type="text" name="genre" placeholder="Genre" />
+        <textarea name="review" placeholder="Review"></textarea>
+        <input
+          type="number"
+          name="rating"
+          placeholder="Rating"
+          min="1"
+          max="5"
+        />
+        <input type="file" name="cover" accept="image/*" />
+        <button type="submit">Add Book</button>
+      </form>
+      <ul>
+        <% books.forEach(book => { %>
+        <li>
+          <img src="<%= book.cover %>" alt="<%= book.title %> Cover" />
+          <div>
+            <strong><%= book.title %></strong> by <%= book.author %>
+            <p>Genre: <%= book.genre %></p>
+            <p>Review: <%= book.review %></p>
+            <p>Rating: <%= book.rating %></p>
+            <a href="/books/edit/<%= book.id %>">Edit</a>
+            <form
+              action="/books/delete/<%= book.id %>"
+              method="POST"
+              style="display: inline"
+            >
+              <button type="submit">Delete</button>
+            </form>
+          </div>
+        </li>
+        <% }) %>
+      </ul>
+    </main>
+  </body>
+</html>

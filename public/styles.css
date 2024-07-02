@@ -1,0 +1,55 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 20px;
+  background-color: aliceblue;
+}
+h2 {
+  background-color: rgb(22, 92, 110);
+  color: #eee9e9;
+  text-align: center;
+  text-shadow: #aaa9a9;
+}
+h2 {
+  animation-name: mote;
+  animation-duration: 3s;
+}
+@keyframes mote {
+  from {
+    background-color: rgb(1, 28, 108);
+  }
+  to {
+    background-color: rgb(67, 25, 90);
+  }
+}
+main > form {
+  margin-bottom: 20px;
+  text-align: center;
+}
+form input,
+form textarea {
+  display: block;
+  margin-bottom: 10px;
+  padding: 8px;
+  width: 300px;
+}
+form button {
+  padding: 8px 16px;
+}
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+li {
+  border: 1px solid #ddd;
+  padding: 10px;
+  margin-bottom: 10px;
+  display: flex;
+}
+img {
+  max-width: 100px;
+  margin-right: 10px;
+}
+strong {
+  display: block;
+  font-size: 1.2em;
+}
